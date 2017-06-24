@@ -1,0 +1,38 @@
+//  Scaffold
+$center-width           : 900px !default;
+
+//  Header
+$header-basis           : 270px !default;
+$header-bg              : #2c3e50 !default;
+$header-stripe-width    : 180px !default;
+$header-stripe-bg       : #34495e !default;
+
+//  Main
+$content-header-height                : 44px !default;
+$content-header-margin                : 36px !default;
+
+$title-padding                        : 0 16px !default;
+
+$personal-content-padding             : 36px 0 0 0 !default;
+$personal-info-basis                  : 400px !default;
+$personal-info-list-basis             : 32px !default;
+$personal-info-list-size              : 14px !default;
+$personal-info-list-title-color       : #34495e !default;
+$personal-info-list-detail-color      : #3498db !default;
+$list-border                          : 8px solid #fff !default;
+
+$list-item-title-basis                : 24px !default;
+$list-item-content-basis              : 24px !default;
+
+
+
+
+
+
+
+
+//  Footer
+$footer-basis           : 36px !default;
+$footer-line-height     : $footer-basis !default;
+$footer-bg              : $header-bg !default;
+$footer-color           : #abb2b9 !default;

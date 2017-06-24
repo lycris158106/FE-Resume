@@ -1,0 +1,8 @@
+#   忽略node_modules文件夹
+node_modules
+
+#   忽略WebStorm配置文件夹
+.idea
+
+#   忽略npm报错日志
+npm-debug.log

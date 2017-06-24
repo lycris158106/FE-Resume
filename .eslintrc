@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb-base/legacy",
+  "globals": {
+    "$": true,
+    "jQuery": true
+  },
+  "rules": {
+    "func-names": 0
+  }
+}
