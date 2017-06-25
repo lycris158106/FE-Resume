@@ -2,8 +2,7 @@
 
   .personal,
   .skills,
-  .work,
-  .education,
+  .experience,
   .portfolio,
   .contract {
     display: flex;
@@ -22,8 +21,7 @@
     background: url(../image/white-bg.png);
   }
 
-  .work,
-  .education {
+  .experience {
     background: url(../image/blue-bg.png);
   }
 
@@ -92,8 +90,7 @@
     }
   }
 
-  .work,
-  .education {
+  .experience {
     .content-header {
       .divider {
         .details {
