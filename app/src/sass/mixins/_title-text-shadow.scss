@@ -1,0 +1,3 @@
+@mixin title-text-shadow($color) {
+  text-shadow: 2px 2px 0 $color, 4px 4px 0 lighten($color, 15);
+}

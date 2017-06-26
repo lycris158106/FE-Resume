@@ -1,0 +1,17 @@
+.career {
+  background: $career-bg;
+
+  &-content {
+    @include vertical-center;
+    flex-direction: column;
+    flex-basis: $center-width;
+
+    .title {
+      @include vertical-center;
+      flex-basis: 100px;
+      font-size: 64px;
+      font-weight: 600;
+      @include title-text-shadow($career-bg);
+    }
+  }
+}

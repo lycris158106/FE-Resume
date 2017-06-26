@@ -1,0 +1,46 @@
+.home {
+  background: $home-bg;
+
+  &-content {
+    @include vertical-center;
+    flex-direction: column;
+    flex-basis: $center-width;
+
+    .photo {
+      flex-basis: $photo-size;
+      width: $photo-size;
+      margin-bottom: 24px;
+      border: 16px solid $home-color-light;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .name {
+      @include vertical-center;
+      flex-basis: 100px;
+      font-size: 64px;
+      font-weight: 600;
+      @include title-text-shadow($home-bg);
+    }
+    .aspiration {
+      @include vertical-center;
+      flex-basis: 56px;
+      font-size: 20px;
+      font-weight: 600;
+      color: $home-color-light;
+
+    }
+    .position {
+      @include vertical-center;
+      flex-basis: 40px;
+      font-size: 24px;
+      font-weight: 600;
+      text-shadow: 1px 1px 0 $home-bg, 2px 2px 0 $home-color-light;
+    }
+    .communication,
+    .email {
+      @include vertical-center;
+      flex-basis: 30px;
+      font-size: 16px;
+    }
+  }
+}

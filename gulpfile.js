@@ -20,11 +20,11 @@ var scriptOrder = [
 ];
 
 gulp.task('clean', function () {
-  del('./dist');
+  del('app/dist');
 });
 
 gulp.task('eslint', function () {
-  gulp.src('./js/resume.js')
+  gulp.src('app/js/resume.js')
     .pipe(eslint({
       useEslintrc: true
     }))
@@ -33,61 +33,63 @@ gulp.task('eslint', function () {
 });
 
 gulp.task('font', function () {
-  gulp.src(['node_modules/font-awesome/fonts/**', 'src/fonts/**'])
-    .pipe(gulp.dest('./dist/fonts'))
+  gulp.src(['node_modules/font-awesome/fonts/**', 'app/src/fonts/**'])
+    .pipe(gulp.dest('app/dist/fonts'))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('image', function () {
-  gulp.src('./src/image/**')
-    .pipe(gulp.dest('./dist/image'))
+  gulp.src('app/src/image/**')
+    .pipe(gulp.dest('app/dist/image'))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('sass', function () {
-  gulp.src('./src/sass/style.scss')
+  gulp.src('app/src/sass/resume.scss')
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({
+      precision: 10
+    }))
     .pipe(autoprefixer({
-      browsers: ['last 20 Chrome versions', 'Firefox >= 30']
+      browsers: ['last 10 Chrome versions', 'Firefox >= 40']
     }))
     .pipe(cssnano())
     .pipe(rename({
       suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('app/dist/css'))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('script', ['eslint'], function () {
-  gulp.src('./src/js/*.js')
+  gulp.src('app/src/js/*.js')
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
     .pipe(sourcemaps.init())
     .pipe(order(scriptOrder))
-    .pipe(concat('common.min.js'))
+    .pipe(concat('resume.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('app/dist/js'))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: 'app'
     },
     index: 'resume.html'
   });
 
-  gulp.watch('./src/fonts/**', ['font']);
-  gulp.watch('./src/sass/**', ['sass']);
-  gulp.watch('./src/js/**', ['script']);
-  gulp.watch('./src/image/**', ['image']);
-  gulp.watch('./resume.html').on('change', reload);
+  gulp.watch('app/src/fonts/**', ['font']);
+  gulp.watch('app/src/sass/**', ['sass']);
+  gulp.watch('app/src/js/**', ['script']);
+  gulp.watch('app/src/image/**', ['image']);
+  gulp.watch('app/resume.html').on('change', reload);
 });
