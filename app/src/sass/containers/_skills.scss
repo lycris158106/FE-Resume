@@ -2,16 +2,54 @@
   background: $skills-bg;
 
   &-content {
-    @include vertical-center;
+    @include center;
     flex-direction: column;
     flex-basis: $center-width;
 
     .title {
-      @include vertical-center;
+      @include center;
       flex-basis: 100px;
       font-size: 64px;
       font-weight: 600;
       @include title-text-shadow($skills-bg);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .detail-description {
+      position: relative;
+      @include center;
+      flex-basis: 50px;
+      width: 320px;
+      padding: 0 32px;
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $skills-description-color;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 25px;
+        border-left: 2px solid $skills-description-color;
+        border-top: 2px solid $skills-description-color;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 25px;
+        border-right: 2px solid $skills-description-color;
+        border-bottom: 2px solid $skills-description-color;
+      }
     }
   }
 }

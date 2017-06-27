@@ -1,0 +1,29 @@
+.label {
+  @include center;
+  padding: $label-padding;
+  margin: $label-margin;
+  font-size: $label-font-size;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &-skilled {
+    background: $label-skilled-bg;
+    &:hover {
+      background: $label-skilled-bg-hover;
+    }
+  }
+
+  &-comprehend {
+    background: $label-comprehend-bg;
+    &:hover {
+      background: $label-comprehend-bg-hover;
+    }
+  }
+
+  &-learning {
+    background: $label-learning-bg;
+    &:hover {
+      background: $label-learning-bg-hover;
+    }
+  }
+}

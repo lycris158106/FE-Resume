@@ -2,7 +2,7 @@
   background: $home-bg;
 
   &-content {
-    @include vertical-center;
+    @include center;
     flex-direction: column;
     flex-basis: $center-width;
 
@@ -15,14 +15,14 @@
       overflow: hidden;
     }
     .name {
-      @include vertical-center;
+      @include center;
       flex-basis: 100px;
       font-size: 64px;
       font-weight: 600;
       @include title-text-shadow($home-bg);
     }
     .aspiration {
-      @include vertical-center;
+      @include center;
       flex-basis: 56px;
       font-size: 20px;
       font-weight: 600;
@@ -30,7 +30,7 @@
 
     }
     .position {
-      @include vertical-center;
+      @include center;
       flex-basis: 40px;
       font-size: 24px;
       font-weight: 600;
@@ -38,7 +38,7 @@
     }
     .communication,
     .email {
-      @include vertical-center;
+      @include center;
       flex-basis: 30px;
       font-size: 16px;
     }

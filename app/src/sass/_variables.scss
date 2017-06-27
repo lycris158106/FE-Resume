@@ -1,3 +1,23 @@
+/*
+ *  Components
+ */
+//  Label
+$label-padding    : 4px 8px !default;
+$label-margin     : 8px 4px !default;
+$label-font-size  : 14px !default;
+
+$label-skilled-bg             : #096254 !default;
+$label-skilled-bg-hover       : lighten($label-skilled-bg, 5) !default;
+
+$label-comprehend-bg          : #0e7a6a !default;
+$label-comprehend-bg-hover    : lighten($label-comprehend-bg, 5) !default;
+
+$label-learning-bg            : #15937f !default;
+$label-learning-bg-hover      : lighten($label-learning-bg, 5) !default;
+/*
+ *  Containers
+ */
+//  Scaffold
 $min-width        : 1400px !default;
 $min-height       : 700px !default;
 
@@ -5,10 +25,6 @@ $center-width     : 1000px !default;
 
 $font-family-base : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif !default;
 $font-color-base  : #fff !default;
-
-
-
-
 
 //  Home
 $home-bg          : #22c3aa !default;
@@ -20,13 +36,16 @@ $photo-size       : 256px !default;
 $project-bg       : #ff758a !default;
 
 //  Skills
-$skills-bg        : #5abbb0 !default;
-
+$skills-bg                : #5abbb0 !default;
+$skills-description-color : #aee2d9 !default;
 //  Education
-$education-bg     : #e3c5ba !default;
+$education-bg     : #c93c67 !default;
 
 //  Career
 $career-bg        : #6fb5d0 !default;
+
+//  Intention
+$intention-bg     : #109085 !default;
 
 //  Download
 $download-bg      : #6a94c6 !default;
