@@ -13,5 +13,28 @@
       font-weight: 600;
       @include title-text-shadow($education-bg);
     }
+
+    .university{
+      @include center;
+      flex-basis: 40px;
+      font-size: 20px;
+      color: lighten($education-bg, 50);
+      font-weight: 600;
+    }
+
+    .college {
+      @include center;
+      flex-basis: 40px;
+      font-size: 24px;
+      color: lighten($education-bg, 40);
+      font-weight: 600;
+    }
+    .duration {
+      @include center;
+      flex-basis: 60px;
+      font-size: 36px;
+      color: lighten($education-bg, 30);
+      font-weight: 600;
+    }
   }
 }

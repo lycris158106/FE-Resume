@@ -13,5 +13,37 @@
       font-weight: 600;
       @include title-text-shadow($intention-bg);
     }
+
+    .job {
+      @include center;
+      flex-basis: 60px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .location {
+      @include center;
+      flex-basis: 36px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .description {
+      @include center;
+      flex-basis: 36px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #00cfba;
+
+      .pm,
+      .ui,
+      .ee,
+      .freestyle {
+        color: lighten($intention-bg, 30);
+        font-weight: 600;
+      }
+    }
   }
 }
