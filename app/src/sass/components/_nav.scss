@@ -1,0 +1,45 @@
+.nav {
+  position: fixed;
+  left: 100px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: -126px 0 0 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    @include center;
+    padding-left: $nav-circle-size;
+    flex-basis: $nav-circle-size*1.5;
+    font-size: $nav-circle-size/2;
+    color: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -$nav-circle-size / 4;
+      width: $nav-circle-size/2;
+      height: $nav-circle-size/2;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    span {
+      display: none;
+    }
+
+    &:hover {
+      &::before {
+        background: #fff;
+        box-shadow: 0 0 0 4px #fff;
+      }
+      span {
+        display: inline;
+      }
+    }
+  }
+}

@@ -6,3 +6,4 @@ node_modules
 
 #   忽略npm报错日志
 npm-debug.log
+package-lock.json

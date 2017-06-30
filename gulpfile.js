@@ -1,21 +1,24 @@
-var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
-var concat = require('gulp-concat');
-var cssnano = require('gulp-cssnano');
-var del = require('del');
-var eslint = require('gulp-eslint');
-var gulp = require('gulp');
-var notify = require('gulp-notify');
-var order = require('gulp-order');
-var plumber = require('gulp-plumber');
-var reload = browserSync.reload;
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const cssnano = require('gulp-cssnano');
+const del = require('del');
+const eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const notify = require('gulp-notify');
+const order = require('gulp-order');
+const plumber = require('gulp-plumber');
+const pump = require('pump');
+const reload = browserSync.reload;
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
 
-var scriptOrder = [
+const scriptOrder = [
   'jquery.js',
+  'jquery.fullpage.js',
   'resume.js'
 ];
 
@@ -46,9 +49,7 @@ gulp.task('image', function () {
 
 gulp.task('sass', function () {
   gulp.src('app/src/sass/resume.scss')
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       precision: 10
@@ -66,17 +67,17 @@ gulp.task('sass', function () {
 });
 
 gulp.task('script', ['eslint'], function () {
-  gulp.src('app/src/js/*.js')
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(order(scriptOrder))
-    .pipe(concat('resume.min.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('app/dist/js'))
-    .pipe(reload({ stream: true }));
+  pump([
+    gulp.src('app/src/js/*.js'),
+    plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }),
+    sourcemaps.init(),
+    order(scriptOrder),
+    concat('resume.min.js'),
+    uglify(),
+    sourcemaps.write('./'),
+    gulp.dest('app/dist/js'),
+    reload({ stream: true }),
+  ]);
 });
 
 gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
