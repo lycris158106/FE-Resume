@@ -85,12 +85,12 @@ gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
     server: {
       baseDir: 'app'
     },
-    index: 'resume.html'
+    index: 'html/resume.html'
   });
 
   gulp.watch('app/src/fonts/**', ['font']);
   gulp.watch('app/src/sass/**', ['sass']);
   gulp.watch('app/src/js/**', ['script']);
   gulp.watch('app/src/image/**', ['image']);
-  gulp.watch('app/resume.html').on('change', reload);
+  gulp.watch('app/html/resume.html').on('change', reload);
 });

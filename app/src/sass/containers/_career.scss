@@ -13,5 +13,30 @@
       font-weight: 600;
       @include title-text-shadow($career-bg);
     }
+
+    .list {
+      @include center;
+      flex-direction: column;
+      .time {
+        @include center;
+        flex-basis: 40px;
+        font-size: 20px;
+        font-weight: 600;
+        color: lighten($career-bg, 35);
+      }
+      .company {
+        @include center;
+        flex-basis: 60px;
+        font-size: 36px;
+        font-weight: 600;
+        color: lighten($career-bg, 30);
+      }
+      .introduction {
+        @include center;
+        flex-basis: 40px;
+        font-size: 18px;
+        color: lighten($career-bg, 25);
+      }
+    }
   }
 }

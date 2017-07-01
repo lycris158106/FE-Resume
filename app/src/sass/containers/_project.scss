@@ -3,6 +3,7 @@
 
   &-content {
     @include center;
+    position: absolute;
     flex-direction: column;
     flex-basis: $center-width;
 
@@ -13,5 +14,15 @@
       font-weight: 600;
       @include title-text-shadow($project-bg);
     }
+  }
+
+  .bootstrap,
+  .react,
+  .bpm {
+    width: 800px;
+    height: 320px;
+    padding-top: 100px;
+    margin: 0 auto;
+    background: #58a;
   }
 }

@@ -11,16 +11,3 @@ body {
   min-width: $min-width;
   min-height: $min-height;
 }
-
-.home,
-.project,
-.skills,
-.education,
-.career,
-.intention,
-.download {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}

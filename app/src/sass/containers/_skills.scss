@@ -3,8 +3,10 @@
 
   &-content {
     @include center;
+    position: relative;
     flex-direction: column;
     flex-basis: $center-width;
+    margin-bottom: 80px;
 
     .title {
       @include center;
@@ -20,12 +22,12 @@
     }
 
     .detail-description {
-      position: relative;
+      position: absolute;
+      top: 320px;
       @include center;
-      flex-basis: 50px;
-      width: 320px;
-      padding: 0 32px;
-      margin-top: 32px;
+      line-height: 40px;
+      width: 640px;
+      padding: 12px 32px;
       font-size: 16px;
       font-weight: 600;
       color: $skills-description-color;

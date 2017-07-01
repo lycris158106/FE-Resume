@@ -1,0 +1,20 @@
+{
+  "html": "可以熟练的使用各种h5的语义化标签，对页面进行最为合理化的布局",
+  "javascript": "2",
+  "es6": "正在逐步的学习ES6/7的各种新特性，ES6的出现使得前端编程更加简洁高效",
+  "lodash": "在日常项目中，可以使用lodash或underscore等javascript库，进行一些常用的js操作",
+  "nodejs": "正在学习node.js服务端编程，掌握一门后端语言是一位优秀的前端攻城狮必须掌握的技能",
+  "ts": "好像现在确实需要学习一门 Javascript 超集语言，Typescript是一个很好的选择",
+  "css": "熟练掌握了CSS2.1版本的特性，并熟悉flex、border-radius等CSS3属性，具有最大程度完美还原PSD设计图的能力",
+  "sass": "8",
+  "less": "9",
+  "jquery": "jQuery，不用多说，每一位前端都需要掌握",
+  "bootstrap": "11",
+  "react": "12",
+  "md": "13",
+  "gulp": "14",
+  "webpack": "15",
+  "git": "16",
+  "svn": "17",
+  "ps": "能使用PhotoShop对设计图进行合理的切图"
+}
