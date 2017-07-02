@@ -15,8 +15,10 @@ $(function () {
     scrollingSpeed: 1200,
 
     controlArrows: false,
+    loopHorizontal: true,
 
     afterRender: function () {
+      $(this).find('.slide.project-bootstrap .fp-tableCell').load('../../html/bootstrap.html');
       $(this).find('.slide.project-react .fp-tableCell').load('../../html/react.html');
       $(this).find('.slide.project-bpm .fp-tableCell').load('../../html/bpm.html');
 

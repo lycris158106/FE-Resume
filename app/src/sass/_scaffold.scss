@@ -11,3 +11,7 @@ body {
   min-width: $min-width;
   min-height: $min-height;
 }
+
+section.section {
+  min-height: 600px;
+}
