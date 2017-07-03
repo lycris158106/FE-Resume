@@ -1,0 +1,102 @@
+@import "variables";
+@import "mixins";
+@import "normalize";
+@import "components/label";
+
+.print {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  color: #fff;
+  main {
+    display: flex;
+    width: 1240px;
+    height: 1754px;
+
+    aside {
+      @include center;
+      flex-direction: column;
+      flex-basis: 480px;
+      justify-content: space-between;
+      background: #00cfba;
+
+      .personal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+
+        .photo {
+          flex-basis: 256px;
+          width: 256px;
+          margin: 96px 0 24px 0;
+          border: 16px solid $home-color-light;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        .name {
+          @include center;
+          flex-basis: 80px;
+          font-size: 48px;
+          font-weight: 600;
+          @include title-text-shadow(#00cfba);
+        }
+
+        .position {
+          @include center;
+          flex-basis: 48px;
+          font-size: 24px;
+          font-weight: 600;
+          text-shadow: 1px 1px 0 #00cfba, 2px 2px 0 $home-color-light;
+        }
+
+        .skills {
+          @include center;
+          flex-direction: column;
+          margin-top: 64px;
+          .detail-row {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: column;
+        .aspiration {
+          @include center;
+          flex-direction: column;
+          margin-bottom: 32px;
+          span {
+            @include center;
+            flex-basis: 36px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b7968;
+          }
+        }
+
+        .contact-menu {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          .list-item {
+            flex-basis: 36px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    article {
+      display: flex;
+      flex-grow: 1;
+      background: #fffff0;
+    }
+  }
+}

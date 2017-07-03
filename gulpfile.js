@@ -48,7 +48,7 @@ gulp.task('image', function () {
 });
 
 gulp.task('sass', function () {
-  gulp.src('app/src/sass/resume.scss')
+  gulp.src(['app/src/sass/resume.scss', 'app/src/sass/print.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -92,5 +92,6 @@ gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
   gulp.watch('app/src/sass/**', ['sass']);
   gulp.watch('app/src/js/**', ['script']);
   gulp.watch('app/src/image/**', ['image']);
+  gulp.watch('app/html/print.html').on('change', reload);
   gulp.watch('app/html/resume.html').on('change', reload);
 });
