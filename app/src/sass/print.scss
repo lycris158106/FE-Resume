@@ -151,6 +151,25 @@
         }
       }
 
+      .project {
+        .detail-row {
+          display: flex;
+          .label {
+            margin: 8px 16px 8px 0;
+            color: #fff;
+            font-weight: 600;
+            background: #00cfba;
+          }
+        }
+      }
+
+      .career,
+      .education {
+        .duration {
+          color: #00cfba;
+        }
+      }
+
       .title {
         display: flex;
         flex-basis: 48px;
