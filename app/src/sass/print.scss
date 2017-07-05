@@ -50,9 +50,9 @@
         .position {
           @include center;
           flex-basis: 48px;
-          font-size: 24px;
+          font-size: 30px;
           font-weight: 600;
-          text-shadow: 1px 1px 0 #00cfba, 2px 2px 0 $home-color-light;
+          text-shadow: 1px 1px 0 #00cfba, 2px 2px 0 lighten(#00cfba, 15);
         }
 
         .skills {
@@ -118,14 +118,16 @@
 
       .project,
       .career,
-      .education {
+      .education,
+      .intention {
         display: flex;
         flex-direction: column;
+        margin-bottom: 32px;
 
         .name {
           display: flex;
-          flex-basis: 40px;
-          font-size: 20px;
+          flex-basis: 48px;
+          font-size: 22px;
           font-weight: 600;
           color: #6e6e6e;
           i,
@@ -144,8 +146,8 @@
         .description {
           display: flex;
           align-items: center;
-          font-size: 16px;
-          font-weight: 600;
+          font-size: 18px;
+          font-weight: 500;
           line-height: 32px;
           color: #8a8986;
         }
@@ -154,12 +156,16 @@
       .project {
         .detail-row {
           display: flex;
+          margin-bottom: 1.5em;
           .label {
             margin: 8px 16px 8px 0;
             color: #fff;
             font-weight: 600;
             background: #00cfba;
           }
+        }
+        .description {
+          margin: .25em 0;
         }
       }
 
@@ -186,8 +192,25 @@
         span:nth-child(2) {
           font-size: 16px;
           font-weight: 600;
-          line-height: 60px;
+          line-height: 58px;
         }
+      }
+
+      .intention {
+        .intention-detail {
+          display: flex;
+          align-items: center;
+          flex-basis: 56px;
+          font-size: 24px;
+          font-weight: 600;
+          span:nth-child(1) {
+            color: #6e6e6e;
+          }
+        }
+      }
+
+      .education {
+        margin-bottom: 0;
       }
     }
   }
