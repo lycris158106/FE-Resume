@@ -92,6 +92,5 @@ gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
   gulp.watch('app/src/sass/**', ['sass']);
   gulp.watch('app/src/js/**', ['script']);
   gulp.watch('app/src/image/**', ['image']);
-  gulp.watch('app/html/print.html').on('change', reload);
-  gulp.watch('app/html/resume.html').on('change', reload);
+  gulp.watch('app/html/**').on('change', reload);
 });
