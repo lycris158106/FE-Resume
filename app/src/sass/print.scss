@@ -70,19 +70,26 @@
           @include center;
           flex-direction: column;
           margin-bottom: 48px;
+          color: #0b7968;
           span {
-            @include center;
-            flex-basis: 36px;
-            font-size: 18px;
+            display: flex;
+            align-items: center;
+            flex-basis: 40px;
+            font-size: 24px;
+            font-weight: 500;
+          }
+
+          span:first-child {
+            flex-basis: 72px;
+            font-size: 36px;
             font-weight: 600;
-            color: #0b7968;
           }
         }
 
         .contact-menu {
           display: flex;
           flex-direction: column;
-          padding: 0 0 0 32px;
+          padding: 0 0 0 60px;
           margin: 0 0 48px 0;
           list-style: none;
           .list-item {
@@ -104,7 +111,7 @@
       .tooltip {
         display: flex;
         flex-direction: column;
-        padding: 0 0 0 34px;
+        padding: 0 0 0 62px;
         margin: 0 0 48px;
         font-size: 16px;
         color: #fff;
@@ -171,7 +178,7 @@
             margin: 8px 16px 8px 0;
             color: #fff;
             font-weight: 600;
-            border-radius: 18px;
+            border-radius: 18px 0;
             background: #00cfba;
           }
         }
