@@ -42,8 +42,8 @@ gulp.task('font', function () {
 });
 
 gulp.task('image', function () {
-  gulp.src('app/src/image/**')
-    .pipe(gulp.dest('app/dist/image'))
+  gulp.src('app/src/images/**')
+    .pipe(gulp.dest('app/dist/images'))
     .pipe(reload({ stream: true }));
 });
 
@@ -91,6 +91,6 @@ gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
   gulp.watch('app/src/fonts/**', ['font']);
   gulp.watch('app/src/sass/**', ['sass']);
   gulp.watch('app/src/js/**', ['script']);
-  gulp.watch('app/src/image/**', ['image']);
+  gulp.watch('app/src/images/**', ['image']);
   gulp.watch('app/html/**').on('change', reload);
 });
