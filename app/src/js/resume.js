@@ -12,7 +12,7 @@ $(function () {
     slidesNavigation: true,
     slidesNavPosition: 'bottom',
 
-    scrollingSpeed: 1200,
+    scrollingSpeed: 1000,
 
     controlArrows: false,
     loopHorizontal: true,

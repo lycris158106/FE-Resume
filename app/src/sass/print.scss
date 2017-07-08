@@ -69,8 +69,8 @@
         .aspiration {
           @include center;
           flex-direction: column;
-          margin-bottom: 48px;
-          color: #0b7968;
+          margin-bottom: 96px;
+          color: #aee2d9;
           span {
             display: flex;
             align-items: center;
@@ -173,9 +173,13 @@
         .detail-row {
           display: flex;
           margin-bottom: 1.5em;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
           .label {
-            padding: 6px 16px;
-            margin: 8px 16px 8px 0;
+            padding: 6px 16px 8px;
+            margin: 8px 16px 9px 0;
             color: #fff;
             font-weight: 600;
             border-radius: 18px 0;
