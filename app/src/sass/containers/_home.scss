@@ -25,8 +25,8 @@
 
     .aspiration {
       @include center;
-      flex-basis: 56px;
-      font-size: 20px;
+      flex-basis: 60px;
+      font-size: 32px;
       font-weight: 600;
       color: $home-color-light;
     }
@@ -40,10 +40,16 @@
     }
 
     .communication,
-    .email {
+    .email,
+    .download {
       @include center;
-      flex-basis: 30px;
-      font-size: 16px;
+      flex-basis: 40px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .download {
+      color: #fff;
     }
   }
 }
