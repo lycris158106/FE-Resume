@@ -10,63 +10,74 @@ const notify = require('gulp-notify');
 const order = require('gulp-order');
 const plumber = require('gulp-plumber');
 const pump = require('pump');
-const reload = browserSync.reload;
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 
+const reload = browserSync.reload;
+
 const scriptOrder = [
   'jquery.js',
   'jquery.fullpage.js',
-  'resume.js'
+  'resume.js',
 ];
 
-gulp.task('clean', function () {
+gulp.task('clean', () => {
   del('app/dist');
 });
 
-gulp.task('eslint', function () {
-  gulp.src('app/js/resume.js')
-    .pipe(eslint({
-      useEslintrc: true
-    }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+gulp.task('eslint', () => {
+  pump([
+    gulp.src('app/js/resume.js'),
+    eslint({
+      useEslintrc: true,
+    }),
+    eslint.format(),
+    eslint.failAfterError(),
+  ]);
 });
 
-gulp.task('font', function () {
-  gulp.src(['node_modules/font-awesome/fonts/**', 'app/src/fonts/**'])
-    .pipe(gulp.dest('app/dist/fonts'))
-    .pipe(reload({ stream: true }));
+gulp.task('font', () => {
+  pump([
+    gulp.src(['node_modules/font-awesome/fonts/**', 'app/src/fonts/**']),
+    gulp.dest('app/dist/fonts'),
+    reload({
+      stream: true,
+    }),
+  ]);
 });
 
-gulp.task('image', function () {
-  gulp.src('app/src/images/**')
-    .pipe(gulp.dest('app/dist/images'))
-    .pipe(reload({ stream: true }));
+gulp.task('image', () => {
+  pump([
+    gulp.src('app/src/images/**'),
+    gulp.dest('app/dist/images'),
+    reload({ stream: true }),
+  ]);
 });
 
-gulp.task('sass', function () {
-  gulp.src(['app/src/sass/resume.scss', 'app/src/sass/print.scss'])
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      precision: 10
-    }))
-    .pipe(autoprefixer({
-      browsers: ['last 10 Chrome versions', 'Firefox >= 40']
-    }))
-    .pipe(cssnano())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('app/dist/css'))
-    .pipe(reload({ stream: true }));
+gulp.task('sass', () => {
+  pump([
+    gulp.src(['app/src/sass/resume.scss', 'app/src/sass/print.scss']),
+    plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }),
+    sourcemaps.init(),
+    sass({
+      precision: 10,
+    }),
+    autoprefixer({
+      browsers: ['last 10 Chrome versions', 'Firefox >= 40'],
+    }),
+    cssnano(),
+    rename({
+      suffix: '.min',
+    }),
+    sourcemaps.write('./'),
+    gulp.dest('app/dist/css'),
+    reload({ stream: true }),
+  ]);
 });
 
-gulp.task('script', ['eslint'], function () {
+gulp.task('script', ['eslint'], () => {
   pump([
     gulp.src('app/src/js/*.js'),
     plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }),
@@ -80,12 +91,12 @@ gulp.task('script', ['eslint'], function () {
   ]);
 });
 
-gulp.task('default', ['sass', 'script', 'image', 'font'], function () {
+gulp.task('default', ['sass', 'script', 'image', 'font'], () => {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
     },
-    index: 'html/resume.html'
+    index: 'html/resume.html',
   });
 
   gulp.watch('app/src/fonts/**', ['font']);
