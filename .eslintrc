@@ -1,8 +1,11 @@
 {
-  "extends": "airbnb",
+  "extends": "airbnb-base/legacy",
   "globals": {
     "$": true,
     "jQuery": true
+  },
+  "env": {
+    "browser": true
   },
   "rules": {
     "func-names": 0
