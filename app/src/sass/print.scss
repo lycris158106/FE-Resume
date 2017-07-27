@@ -12,6 +12,7 @@
   color: #fff;
   font-family: '思源黑体', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   main {
+    position: relative;
     display: flex;
     width: 1240px;
     height: 1754px;
@@ -28,7 +29,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex-grow: 1;
 
         .photo {
           flex-basis: 256px;
@@ -51,7 +51,7 @@
         }
 
         .position {
-          margin-bottom: 32px;
+          margin-bottom: 24px;
           line-height: 48px;
           font-size: 26px;
           font-weight: 600;
@@ -80,10 +80,34 @@
         }
       }
 
+      .advantage {
+        @include center;
+        flex-direction: column;
+
+        .list {
+          padding: 0 24px 0 54px;
+          margin: 0;
+          list-style: none;
+
+          li {
+            position: relative;
+            margin: 0 0 16px 0;
+            line-height: 28px;
+            font-size: 18px;
+
+            .fa {
+              position: absolute;
+              top: 4px;
+              left: -24px;
+            }
+          }
+        }
+      }
+
       .aspiration {
         @include center;
         flex-direction: column;
-        margin-bottom: 96px;
+        margin-bottom: 48px;
         color: #aee2d9;
         span {
           display: flex;
@@ -97,30 +121,6 @@
           flex-basis: 72px;
           font-size: 36px;
           font-weight: 600;
-        }
-      }
-
-      .skills {
-        @include center;
-        flex-direction: column;
-        margin-bottom: 96px;
-        .detail-row {
-          display: flex;
-          justify-content: space-between;
-        }
-      }
-
-      .tooltip {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0 0 62px;
-        margin: 0 0 48px;
-        font-size: 16px;
-        color: #fff;
-        span {
-          display: flex;
-          flex-basis: 24px;
-          align-items: center;
         }
       }
     }
@@ -165,17 +165,20 @@
         .description {
           display: flex;
           align-items: center;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 500;
-          line-height: 36px;
+          line-height: 32px;
           color: #8a8986;
         }
       }
 
       .project {
+        .description {
+          text-indent: 2em;
+        }
         .detail-row {
           display: flex;
-          margin-bottom: 1.5em;
+          margin-bottom: 12px;
 
           &:last-child {
             margin-bottom: 0;
@@ -189,8 +192,11 @@
             background: #00cfba;
           }
         }
-        .description {
-          margin: .25em 0;
+      }
+
+      .career {
+        .description:not(.duration) {
+          text-indent: 2em;
         }
       }
 
@@ -198,6 +204,7 @@
       .education {
         .duration {
           color: #00cfba;
+          text-align: right;
         }
       }
 
@@ -249,10 +256,26 @@
             flex-direction: column;
 
             .duration {
-              justify-content: center;
+              justify-content: flex-end;
             }
           }
         }
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      color: #00cfba;
+      span {
+        display: flex;
+        flex-basis: 20px;
+        justify-content: flex-end;
+        align-items: center;
       }
     }
   }
