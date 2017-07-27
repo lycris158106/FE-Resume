@@ -97,7 +97,7 @@
 
             .fa {
               position: absolute;
-              top: 4px;
+              top: 5px;
               left: -24px;
             }
           }
@@ -141,7 +141,7 @@
       .intention {
         display: flex;
         flex-direction: column;
-        margin-bottom: 32px;
+        margin-bottom: 18px;
 
         .name {
           display: flex;
@@ -173,12 +173,23 @@
       }
 
       .project {
-        .description {
+        .name {
+          position: relative;
+          .duration {
+            position: absolute;
+            top: 0;
+            right: 12px;
+            font-size: 16px;
+            line-height: 48px;
+            color: #00cfba;
+            font-weight: 500;
+          }
+        }
+        .description:not(.duration) {
           text-indent: 2em;
         }
         .detail-row {
           display: flex;
-          margin-bottom: 12px;
 
           &:last-child {
             margin-bottom: 0;
@@ -202,9 +213,8 @@
 
       .career,
       .education {
-        .duration {
+        .description.duration {
           color: #00cfba;
-          text-align: right;
         }
       }
 
