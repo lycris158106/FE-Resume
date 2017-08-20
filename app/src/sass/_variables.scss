@@ -6,14 +6,7 @@ $label-padding                : 3px 8px 5px !default;
 $label-margin                 : 8px !default;
 $label-font-size              : 16px !default;
 
-$label-skilled-bg             : #096254 !default;
-$label-skilled-bg-hover       : lighten($label-skilled-bg, 5) !default;
 
-$label-comprehend-bg          : #0e7a6a !default;
-$label-comprehend-bg-hover    : lighten($label-comprehend-bg, 5) !default;
-
-$label-learning-bg            : #15937f !default;
-$label-learning-bg-hover      : lighten($label-learning-bg, 5) !default;
 
 //  Nav
 $nav-circle-size              : 24px !default;
@@ -41,6 +34,8 @@ $project-bg                   : #ff758a !default;
 //  Skills
 $skills-bg                    : #5abbb0 !default;
 $skills-description-color     : #cee2d9 !default;
+$skills-label-bg               : #0e7a6a !default;
+$skills-label-bg-hover         : lighten($skills-label-bg, 5) !default;
 //  Education
 $education-bg                 : #c93c67 !default;
 

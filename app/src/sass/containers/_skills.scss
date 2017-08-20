@@ -19,6 +19,13 @@
     .detail-row {
       display: flex;
       justify-content: space-between;
+
+      .label {
+        background: $skills-label-bg;
+        &:hover {
+          background: $skills-label-bg-hover;
+        }
+      }
     }
 
     .detail-description {
